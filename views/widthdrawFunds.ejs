@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from coinfox.swiftsfunded.com/dashboard/withdrawal by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 May 2024 10:14:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello <%=user.username%>, welcome to CoinFox.SwiftsFundedFX</title>
+    <link rel="shortcut icon" href="../images/%24logo_img.html" type="image/x-icon">
+    <link rel="stylesheet" href="../assetss/font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assetss/dashboard.css">
+    <link rel="stylesheet" href="../includes/selectable/jquery-select7.css">
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../includes/selectable/jquery-select7.js"></script>
+    <!-- <script src="../includes/selectable/alert.js"></script> -->
+    <style>
+        .select7__current {
+            background: var(--dark-blue);
+            color: var(--text);
+            width: 240px;
+            border: 1px solid transparent;
+        }
+
+        @media screen and (max-width: 789px) {
+            .select7__current {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav>
+        <article>
+            <ul>
+                <li style="display: flex; align-items: center;">
+                    <i class="material-icons" id='bars' style="color: #6494AE;">menu</i>
+                    <img src="../images/dashboard-logo1711713000.png" width="110px">
+                </li>
+
+                <li style='transform: translateY(-15px)'>
+                                <a href ='#'><button id='nav-trade-btn'>Trade</button></a>
+                                <button class='dropdown-btn' style='overflow:hidden; width: 60px; height: 60px; border: 1px solid transparent; transform: translateY(10px)'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                  </svg></button>
+                             </li>            </ul>
+        </article>
+
+        <article>
+            <ul>
+                <!-- <li
+                    style="display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
+                    <span style="color: var(--text);">CXC</span>
+                    <span style="color: #0fec73; margin: 0 20px; transform: translateY(-5px);"><i
+                            class="material-icons">keyboard_arrow_up</i> +29.6%</span>
+                </li> -->
+                <li><img src="../images/dashboard-logo1711713000.png" width="130px"></li>
+                <li style="display: flex; justify-content: space-between; align-items: center;">
+                    <article style="display: flex; padding: 5px;">
+                        <img src="../images/dollar-sign.svg" width="40px" style="margin-right: 5px;">
+                        <div style="font-size: 15px;">
+                            <b style='color: var(--text-color)'>Real Account</b><br>
+                            <span style="font-size: 12px; color: #0BC2D2;"><%=user.balance%></span><br>
+                            <span style="font-size: 12px; color: #7CBBE3;"><span class="btc"></span> <br>
+                                <span style="font-size: 12px; color: #7CBBE3; display: none"><span></span> ETH
+
+                                </span>
+                        </div>
+                    </article>
+
+                    <article style="margin: 0 10px;" id='dropdown-btn'>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <button style='overflow:hidden; width: 50px; height: 50px; border: 1px solid transparent'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                              </svg></button>
+                            <span style="font-size: 12px; margin: 0 10px;">
+                                <span style="color: #0fec73;"><%=user.verifiedStatus%></span><br>
+                                <span style="color: var(--text-color);"><%=user.fullname%></span>
+                            </span>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+
+        </article>
+
+    </nav>
+
+    <br><br>
+    <br><br>
+    <div class="side-panel-left" style="padding: 10px;">
+        <ul>
+            <!-- <li id="side-bal-m"
+                style=" padding: 5px; border-top: 1px solid #bbd8ff70; border-bottom: 1px solid #bbd8ff70; padding: 10px;">
+                <img src="../images/dollar-sign.svg" width="40px" style="margin-right: 5px;">
+                <div style="font-size: 15px;">
+                    <b>Real Account</b><br>
+                    <span style="font-size: 12px; color: #0BC2D2;">0.00USD</span><br>
+                    <span style="font-size: 12px; color: #7CBBE3;"><span class="btc"></span> BTC<br>
+                    <span style="font-size: 12px; color: #7CBBE3;"><span></span> ETH
+                    </span>
+                </div>
+            </li> -->
+
+            <!-- <li id='side-bal-d'
+                style=" padding: 5px; border-top: 1px solid #bbd8ff70; border-bottom: 1px solid #bbd8ff70; padding: 10px;"><br>
+                <p style="font-size: 13px;">AVAILABLE BALANCE</p><br>
+                <p style="font-size: 15px; color: #0971fe;"><span class="btc"></span> <sub style="font-size: 10px;">BTC</sub></p><br>
+                <p style="font-size: 15px;">0.00 <sub style="font-size: 10px;">USD</sub></p>
+                <p style="font-size: 15px;"> <sub style="font-size: 10px;">ETH</sub></p>
+            </li> -->
+
+            <br>
+                        <a href="/dashboard">
+                <li class=""><i class="material-icons">dashboard</i> Dashboard</li>
+            </a>
+            <span style="font-size: 10px; font-weight: bold; padding: 0 10px; color: #6494AE;">APPS</span>
+            <a href="/market">
+                <li class=""><i class="material-icons">insert_chart</i> Market</li>
+            </a>
+            <a href="/deposit">
+                <li class=""><i class="material-icons"> credit_card</i> Deposit</li>
+            </a>
+            
+            <a href="/withdraw">
+                <li class="active"><i class="material-icons">account_balance_wallet</i> Withdrawal </li>
+            </a>
+            <!-- <a href="nfts"><li class=""><i class="material-icons">image</i> NFTs </li></a> -->
+            <a href="/trade-history/<%=user._id%>">
+                <li class=""><i class="material-icons">repeat</i>Deposit History </li>
+            </a>
+            <a href="/widthdrawHistory/<%=user._id%>">
+                <li class=""><i class="material-icons">repeat</i> widthdraw History </li>
+            </a>
+            <a href="/crypto">
+                <li class=""><i class="material-icons">verified_user</i> Packages</li>
+            </a>
+            <a href="/signal">
+                <li class=""><i class="material-icons">online_prediction</i> Signal</li>
+            </a>
+            <a href="/kyc">
+                <li class=""><i class="material-icons">content_copy</i> AML / KYC</li>
+            </a>
+            <a href="/settings/<%=user._id%>">
+                <li class=""><i class="material-icons">settings</i> Settings</li>
+            </a>
+            <a href="/logout">
+                <li><i class="material-icons">power_settings_new</i> Logout</li>
+            </a>
+        </ul>
+        <br><br><br><br><br><br>
+    </div>
+
+    <div class="side-panel-right"><br>
+        <h3 style="text-align: center; color: var(--text-color)">New Trade</h3><br><br>
+        <label for="" style='color: var(--text-color)'>Select Account Type</label><br><br>
+        <select name="" id="account_type">
+            <option value="">---</option>
+            <option value="demo">Demo Account ($100,000.00)</option>
+            <option value="real">Real Account (<%=user.balance%>)</option>
+        </select><br><br>
+
+        <style>
+            #ac_item {
+                display: none;
+            }
+
+            .select7 {
+                color: red;
+                font-size: 14px;
+                text-overflow: ellipsis;
+                width: 100%;
+                white-space: nowrap;
+            }
+        </style>
+
+        <div id="ac_item">
+            <label for="" style='color: var(--text-color)'><span id='ac_name'></span> <sup><i class="fa fa-question-circle"></i></sup></label>
+            <p id='balance'>
+                <img src="../images/dollar-sign.svg" width="40px">
+                <span style="margin: 10px;"><span id="ac_price"></span> USD</span>
+                <!-- <span style="margin: 10px;">0.00 USD</span> -->
+            </p><br><br>
+        </div>
+
+        <label for="" style='color: var(--text-color);'>Markets</label><br><br>
+        <select name="trade_pair" id="trade_pair" style='text-align: left'>
+            <option value="cryptocurrency">Cryptocurrency</option>
+            <option value="stock">Stock</option>
+            <option value="indices">Indices</option>
+        </select>
+        <br><br><br>
+
+        <label for="" style='color: var(--text-color);'>Pair</label><br><br>
+        <div id="trade_pair_one" style='text-align: left;'>
+            <select name="pair" id="trade_pair_one_v" class="select7" style='text-align: left;'>
+                <option value="USDT/BTC" data-icon='../includes/icons/bitcoin.png'>USDT/BTC</option>
+                <option value="USDT/ETH" data-icon='../includes/icons/eth.png'>USDT/ETH</option>
+                <option value="USDT/TRX" data-icon='../includes/icons/tron.png'>USDT/TRX</option>
+                <option value="USDT/SOL" data-icon='../includes/icons/Solana_logo.png'>USDT/SOL</option>
+                <option value="USDT/LTC" data-icon='../includes/icons/lite.png'>USDT/LTC</option>
+                <option value="USDT/BNB" data-icon='../includes/icons/bnb.png'>USDT/BNB</option>
+                <option value="USDT/LINK" data-icon='../includes/icons/link.png'>USDT/LINK</option>
+                <option value="USDT/FTT" data-icon='../includes/icons/ftt.png'>USDT/FTT</option>
+                <option value="USDT/SHIB" data-icon='../includes/icons/shib.png'>USDT/SHIB</option>
+                <option value="USDT/ETC" data-icon='../includes/icons/etc.png'>USDT/ETC</option>
+                <option value="USDT/TFUEL" data-icon='../includes/icons/tfuel.png'>USDT/TFUEL</option>
+                <option value="USDT/ADA" data-icon='../includes/icons/ada.png'>USDT/ADA</option>
+                <option value="USDT/VET" data-icon='../includes/icons/vet.png'>USDT/VET</option>
+            </select>
+        </div>
+
+
+        <div id="trade_pair_two" style='text-align: left; display: none'>
+            <select name="pair2" id="trade_pair_two_v" class="select7">
+                <option value="FACEBOOK INC" data-icon='../includes/icons/facebook.png'>FACEBOOK INC</option>
+                <option value="BOEING CO" data-icon='../includes/icons/boeing.png'>BOEING CO</option>
+                <option value="APPLE INC" data-icon='../includes/icons/apple.png'>APPLE INC</option>
+                <option value="AMAZON COM INC" data-icon='../includes/icons/amazon.png'>AMAZON COM INC</option>
+                <option value="MICROSOFT CORP" data-icon='../includes/icons/microsoft.png'>MICROSOFT CORP</option>
+                <option value="NETFLIX INC" data-icon='../includes/icons/netflix.png'>NETFLIX INC</option>
+                <option value="MICRON TECHNOLOGY INC" data-icon='../includes/icons/mircon.png'>MICRON TECHNO...</option>
+                <option value="NVIDIA CORP" data-icon='../includes/icons/nvidia.png'>NVIDIA CORP</option>
+                <option value="CANOPY GROWTH INCORPORATION" data-icon='../includes/icons/canopy.png'>CANOPY GROW...</option>
+                <option value="TESLA INC" data-icon='../includes/icons/tesla.png'>TESLA INC</option>
+                <option value="TWITTER INC" data-icon='../includes/icons/twitter.png'>TWITTER INC</option>
+                <option value="SBERBANK RUSSIA" data-icon='../includes/icons/sberbank.png'>SBERBANK RUS...</option>
+                <option value="CRONOS GROUP INC" data-icon='../includes/icons/cronos.png'>CRONOS GROUP INC</option>
+                <option value="PENNYMAC FINCANCIAL SERVICES INC" data-icon='../includes/icons/pennymac.png'>PENNYMAC FINCA...</option>
+                <option value="PAN AMERICAN SILVER CORP" data-icon='../includes/icons/pan.png'>PAN AME...</option>
+                <option value="BANK OF AMERICAN CORPORATION" data-icon='../includes/icons/bank.png'>BANK OF AMERI...</option>
+                <option value="INTEL CORP" data-icon='../includes/icons/intel.png'>INTEL CORP</option>
+                <option value="RELIANCE INDS" data-icon='../includes/icons/reliance.png'>RELIANCE INDS</option>
+                <option value="ELECTRONIC ARTS INC" data-icon='../includes/icons/electronic.png'>ELECTRONIC AR...</option>
+                <option value="SAMSUNG LIFE" data-icon='../includes/icons/samsung.png'>SAMSUNG LIFE</option>
+                <option value="SHOPIFY INC" data-icon='../includes/icons/shopify.png'>SHOPIFY INC</option>
+                <option value="PAYPAL HONDINGS INC" data-icon='../includes/icons/paypal.png'>PAYPAL HONDINGS INC</option>
+            </select>
+        </div>
+
+        <div id="trade_pair_three" style='text-align: left;  display: none '>
+            <select name="pair3" id="trade_pair_three_v" class="select7">
+                <option value="GBPUSD" data-icon='../includes/icons/gbpusd.png'>GBPUSD, Pound vs US Dollar</option>
+                <option value="EURAUD" data-icon='../includes/icons/euraud.png'>EURAUD, Euro vs Australian Dollar</option>
+                <option value="EURCHF" data-icon='../includes/icons/eurchf.png'>EURCHF, Euro vs Swiss Franc</option>
+                <option value="EURGBP" data-icon='../includes/icons/eurgbp.png'>EURGBP, Euro vs Great Britain</option>
+                <option value="GBPCAD" data-icon='../includes/icons/gbpcad.png'>GBPCAD, Great Britain Pound vs Canadian Dollar</option>
+                <option value="NZDUSD" data-icon='../includes/icons/nzdusd.png'>NZDUSD, New Zealand vs US Dollar</option>
+                <option value="EURNZD" data-icon='../includes/icons/eurusd.png'>EURNZD, Euro vs New Zealand</option>
+                <option value="CADJPYm" data-icon='../includes/icons/cadjpym.png'>CADJPYm, Canadian Dollar vs Japanise Yen AUDJPYm, Australian Dollar vs Japanise Yen</option>
+                <option value="USDCHF" data-icon='../includes/icons/eurchf.png'>USDCHF, US Dollar vs Swiss Franc</option>
+                <option value="GBPAUD" data-icon='../includes/icons/gbpaud.png'>GBPAUD, Great Britain Pound vs Australian Dollar</option>
+                <option value="USDTRY" data-icon='../includes/icons/usdtry.png'>USDTRY, US Dollar vs Turkish New Lira</option>
+                <option value="USD vs THB" data-icon='../includes/icons/usdthb.png'>USD vs THB</option>
+                <option value="AUD vS USD" data-icon='../includes/icons/gbpaud.png'>AUD vS USD</option>
+                <option value="CAD vs JPY" data-icon='../includes/icons/cadjpym.png'>CAD vs JPY</option>
+                <option value="EURUSD" data-icon='../includes/icons/eurusd.png'>EURUSD, Euro vs US Dollar</option>
+                <option value="USDRUB" data-icon='../includes/icons/usdrub.png'>USDRUB, US Dollar vs Russian Ruble</option>
+                <option value="XAUUSD" data-icon='../includes/icons/xauusd.png'>XAUUSD, Gold vs US Dollar</option>
+                <option value="NZDJPY" data-icon='../includes/icons/cadjpym.png'> NZDJPY, New Zealand Dollar vs Japanise Yen</option>
+            </select>
+        </div>
+        <br><br>
+
+        <label for="" style='color: var(--text-color);'>Time <i class="fa fa-clock-o"></i></label><br><br>
+        <select name="" id='time_select' onchange='time_value(this)'>
+            <option value="0">1min</option>
+            <option value="1">2min</option>
+            <option value="2">3min</option>
+            <option value="3">4min</option>
+            <option value="4">5min</option>
+            <option value="5">6min</option>
+            <option value="6">7min</option>
+            <option value="7">8min</option>
+            <option value="8">9min</option>
+            <option value="9">10min</option>
+            <option value="10">11min</option>
+            <option value="11">12min</option>
+            <option value="12">13min</option>
+            <option value="13">14min</option>
+            <option value="14">15min</option>
+            <option value="15">16min</option>
+            <option value="16">17min</option>
+            <option value="17">18min</option>
+            <option value="18">19min</option>
+            <option value="19">20min</option>
+            <option value="20">21min</option>
+            <option value="21">22min</option>
+            <option value="22">23min</option>
+            <option value="23">24min</option>
+            <option value="24">25min</option>
+            <option value="25">26min</option>
+            <option value="26">27min</option>
+            <option value="27">28min</option>
+            <option value="28">29min</option>
+            <option value="29">30min</option>
+        </select>
+
+        <br><br><br>
+
+        <label for="" style='color: var(--text-color)'>Type</label><br><br>
+        <select name="type_exe" id="type_exe">
+            <option value="Market Execuation">Market Execuation</option>
+            <option value="Pending Order">Pending Order</option>
+        </select>
+        <br><br>
+
+        <label for="" style='color: var(--text-color)'>Stop Loss</label><br><br>
+        <input type="text" name='stop_loss' id='stop_loss' value="0.0000">
+        <br><br>
+
+        <label for="" style='color: var(--text-color)'>Take Profit</label><br><br>
+        <input type="text" name='take_profit' id='take_profit' value="0.0000">
+        <br><br>
+
+        <label for="" style='color: var(--text-color)'>Trade Amount</label><br>
+        <span style="color: #6494AE; font-size: 13px; position: relative; top:18px; left: 5px; z-index: 2;">USDT</span>
+        <input type="text" name='trade_amount' id='trade_amount' value="">
+        <center><img src="../images/loader.svg" width="50px" id='loader_img' style='display: none'></center>
+        <div class="side-panel-right-btn">
+            <button name='submit' class='trade_button'>Sell<br></button>
+            <button name='submit' class='trade_button'>Buy<br></button>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+
+    </div>
+
+    <div class="side-dropdown">
+        <article style="display: flex;">
+            <button style='overflow:hidden; width: 50px; height: 50px; border: 1px solid transparent; border-radius: 100%'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg></button>
+            <p style="margin: 0 10px;">
+                <b style="color: var(--text);"></b><br>
+                <span style="font-size: 13px; color: #6494AE;"></span>
+            </p>
+        </article>
+
+        <article style="color: #6494AE; line-height: 20px;"><br>
+            <span style="font-size: 10px; font-weight: bold; color: var(--text-color)">REAL ACCOUNT</span><br>
+            <span style="font-size: 17px; color: dodgerblue; font-weight: bold;"><span class=""></span> <sub> </sub></span><br>
+            <span style="font-size: 13px;"><%=user.balance%></span><br>
+            <div style="display: flex; align-items: center; font-size: 13px; color: dodgerblue;">
+                <a href="/deposit" style='color: dodgerblue'><i class="material-icons" style="font-size: 13px;">account_balance_wallet</i> Deposit </a>
+                <a href="withdraw" style='color: dodgerblue'><i style="margin: 0 0px 0 20px; font-size: 13px;" class="material-icons">account_balance_wallet</i> Withdraw </a>
+            </div>
+        </article>
+
+        <article>
+            <ul style="font-size: 14px;">
+                <a href="/dashboard">
+                    <li><i class="material-icons" style="font-size: 20px;">account_balance_wallet</i> Wallet</li>
+                </a>
+                <a href="/settings/<%=user._id%>">
+                    <li><i class="material-icons" style="font-size: 20px;">person</i> View Profile</li>
+                </a>
+                <a href="/settings/<%=user._id%>">
+                    <li><i class="material-icons" style="font-size: 20px;">settings</i> settings</li>
+                </a>
+                <a href="/logout">
+                    <li><i class="material-icons" style="font-size: 20px;">power_settings_new</i> Sign Out</li>
+                </a>
+             
+            </ul>
+        </article>
+    </div>
+    <div class="fixed-width"><br><br><br>
+        <div style='padding: 5px; background: orange; font-size: 12px; border-radius: 3px;'><i class='fa fa-info-circle'></i> Complete your account info. <a href='/withdrawal_info/<%=user._id%>' style='color: white'><b>Click Here</b></a></div><br>
+        <script>
+            $(".select7").select7();
+        </script>
+<style>
+    .container {
+        padding: 15px;
+        background: var(--dark-blue);
+        border-radius: 5px;
+        color: var(--text-color);
+    }
+    form input, select {
+        padding: 10px; 
+        border-radius: 3px;
+        border: 1px solid var(--hover);
+        display: block;
+        width: 100%;
+        background: var(--primary);
+        color: var(--text-color);
+        margin: 10px 0;
+        font-size: 12px;
+    }
+    form label {
+        margin: 20px 0;
+        font-size: 14px;
+    }
+    form button, #pbtn {
+        background: dodgerblue;
+        padding: 9px 15px;
+        display: flex;
+        align-items: center;
+        color: white;
+        border: 1px solid dodgerblue;
+        border-radius: 3px;
+        margin: 5px 0;
+    }
+    #dol {
+        position: absolute; 
+        right: 40px; 
+        transform: translateY(-38px); 
+        z-index: 1; 
+        width: 24px; 
+        height: 23px; 
+        border-radius: 50%; 
+        background: var(--primary); 
+        color: var(--text);
+    }
+    #bit, #ethereum, #bank, #cashapp, #amt {
+        display: none;
+    }
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
+</style>
+
+
+<style>
+        @media screen and (min-width: 768px) {
+            .fixed-width {
+                width: 100%;
+                margin: 0 0%;
+            }
+            
+            .side-panel-right {
+                display: none;
+                width: 30%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .fixed-width {
+                width: 80%;
+                transform: translateX(5%);
+                margin: 0 15%;
+            }
+
+            .side-panel-left {
+                width: 20%;
+                display: block;
+            }
+        }
+    </style>
+
+ <div class="container">
+ <center><div id="loader" style='display: none'><img src="../images/loader.svg" width="70px" style=' z-index: 9999999'></div></center><br><br>
+ <center><div><img src="images/paypal.html" id='icon' style='display: none' width="70px" ></div></center>
+
+        <h4>Withdrawal</h4><br>
+        <form action="/widthdraw/<%=user._id%>" method="POST">
+
+        <div id="list_content">
+        <label for="">Select Balance Type</label>
+        <select name="balance_type" id="balance_type" required>
+            <option value=""></option>
+            <option value="capital_balance">Capital Balance (<%=user.balance%>)</option>
+            <option value="profit_balance">Profit Balance (<%=user.profit%>)</option>
+            <option value="bonus_balance">Bonus Balance (<%=user.bonus%>)</option>
+        </select><br>
+
+            <label for="">Select Assets</label>
+            <select name="select_button" id="select_button">
+                <option value="">Select Withdrawal Method</option>
+                <option value="bitcoin">Bitcoin</option>
+                <option value="eth">Ethereum</option>
+                <option value="bank">Bank Transfer</option>
+                <option value="paypal">Paypal</option>
+                <option value="cashapp">Cashapp</option>
+            </select>
+
+        <div id="bitcoin">
+            <label for="">Bitcoin Address</label>
+            <input type="text" name='wallet_address' id='bito' value=""><br>
+
+        </div>
+
+        <div id="ethereum">
+            <label for="">Ethereum Address</label>
+            <input type="text" name='eth_address' id='etho' value=""><br>
+            
+        </div>
+
+        <div id="bank">
+            <label for="">Account Number</label>
+            <input type="text" name='account_number' id='acn' value=""><br>
+
+            <label for="">Account Name</label>
+            <input type="text" name='account_name' id='aca' value=""><br>
+
+            <label for="">Bank Name</label>
+            <input type="text" name='bank_name' value=""><br>
+
+            <label for="">Swift Code</label>
+            <input type="text" name='swift_code' id='swf' value=""><br>
+
+        </div>
+
+        <div id="cashapp">
+            <label for="">Cashapp Tag</label>
+            <input type="text" name='cashapp' id='cash'  value=""><br>
+        </div>
+        
+        <div id="paypal">
+            <label for="">Paypal Email</label>
+            <input type="text" name='paypal' id='cash'  value=""><br>
+        </div>
+
+        <div id="amt">
+            <label for="">Amount</label>
+            <input type="number" id='amount_input' name='amount_input' ><p id='dol'><i class='material-icons'>&#xe227;</i></p> <br>
+        </div>
+
+            <p id='pbtn' style='width: 200px; display: none'>Process Withdrawal</p>
+            </div>
+
+            <div id="withdrawal_pin" style='display: none'>
+                <label for="">Enter Withdraw Narration</label>
+                <input type="text" name='pin' id="pin" placeholder="input your widthdrawal Narration" required><br>
+
+                <input type="hidden" id='method' name='method'>
+
+                <button type='submit'  name='submit'>Submit</button><br><br><br>
+            <p id="error" style='display: none'></p>
+
+           </div>
+
+            <!-- <i style='font-size: 13px; color: dodgerblue; padding: 10px 0'><i class="fa fa-question-circle-o" style='font-size: 5px'></i> Deposit will appear in your account after payment is successfully made and approved by our team.</i><br><br><br><br> -->
+        </form>
+ </div>
+
+ <script src="../../unpkg.com/sweetalert%402.1.2/dist/sweetalert.min.js"></script>
+ 
+ <script>
+     var select_button = document.getElementById('select_button');
+    var bank = document.getElementById('bank');
+    var bitcoin = document.getElementById('bitcoin');
+    var ethereum = document.getElementById('ethereum');
+    var cashapp = document.getElementById('cashapp');
+    var paypal = document.getElementById('paypal');
+    var pbtn = document.getElementById('pbtn');
+    var list_content = document.getElementById('list_content');
+    var withdrawal_pin = document.getElementById('withdrawal_pin');
+    var amt = document.getElementById('amt');
+    var method = document.getElementById('method');
+    var amount_input = document.getElementById('amount_input')
+
+    var bito = document.getElementById('bito');
+    var etho = document.getElementById('etho');
+    var method = document.getElementById('method');
+    var icon = document.getElementById('icon');
+    var loader = document.getElementById('loader');
+
+
+            bitcoin.style.display = 'none'
+            ethereum.style.display = 'none'
+            bank.style.display = 'none'
+            cashapp.style.display = 'none'
+            paypal.style.display = 'none'
+            icon.style.display = 'none'
+
+    select_button.addEventListener('change', function () {
+        loader.style.display = 'block'
+        method.value = select_button.value
+        setTimeout(() => {
+            pbtn.style.display = 'block'
+            if (select_button.value == 'bitcoin') {
+            bitcoin.style.display = 'block'
+            ethereum.style.display = 'none'
+            bank.style.display = 'none'
+            cashapp.style.display = 'none'
+            paypal.style.display = 'none'
+            loader.style.display = 'none'
+            icon.style.display = 'block'
+            icon.src = 'dashboard/images/bitcoin.png'
+            amt.style.display = 'block'
+            method.value = select_button.value
+
+        }else if (select_button.value == 'eth') {
+            bitcoin.style.display = 'none'
+            ethereum.style.display = 'block'
+            bank.style.display = 'none'
+            cashapp.style.display = 'none'
+            paypal.style.display = 'none'
+            loader.style.display = 'none'
+            icon.style.display = 'block'
+            icon.src = 'dashboard/images/eth.png'
+            amt.style.display = 'block'
+            method.value = select_button.value
+
+        }else if (select_button.value == 'bank') {
+            bitcoin.style.display = 'none'
+            ethereum.style.display = 'none'
+            bank.style.display = 'block'
+            cashapp.style.display = 'none'
+            paypal.style.display = 'none'
+            loader.style.display = 'none'
+            icon.style.display = 'block'
+            icon.src = 'dashboard/images/bank.png'
+            amt.style.display = 'block'
+            method.value = select_button.value
+
+        }else if (select_button.value == 'paypal') {
+            bitcoin.style.display = 'none'
+            ethereum.style.display = 'none'
+            bank.style.display = 'none'
+            cashapp.style.display = 'none'
+            paypal.style.display = 'block'
+            loader.style.display = 'none'
+            icon.style.display = 'block'
+            icon.src = 'dashboard/images/paypal.html'
+            amt.style.display = 'block'
+            method.value = select_button.value
+
+        }else if (select_button.value == 'cashapp') {
+            bitcoin.style.display = 'none'
+            ethereum.style.display = 'none'
+            bank.style.display = 'none'
+            cashapp.style.display = 'block'
+            paypal.style.display = 'none'
+            loader.style.display = 'none'
+            icon.style.display = 'block'
+            icon.src = 'dashboard/images/cashapp.png'
+            amt.style.display = 'block'
+            method.value = select_button.value
+        } 
+        }, 5000);
+    })
+
+    
+    pbtn.addEventListener('click', function () {
+        if (amt.value == "" || select_button.value == '') {
+            alert("input's cannot be empty")
+        }else if (amount_input.value == "") {
+            alert("input's cannot be empty")            
+        } else {
+            list_content.style.display = 'none'
+            withdrawal_pin.style.display = 'block'
+
+        }
+    })
+
+
+ </script>
