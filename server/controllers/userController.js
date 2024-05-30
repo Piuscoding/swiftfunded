@@ -355,9 +355,9 @@ module.exports.editProfilePage = async(req, res)=>{
 }
 
 module.exports.transactionPage = async(req, res)=>{
-  // const id = req.params.id
-  // const user = await User.findById(id).populate("widthdraws")
-   res.render('transactions')
+  const id = req.params.id
+const user = await User.findById(id).populate("deposits")
+ res.render('transactions', { user})
 }
 
 
@@ -469,7 +469,9 @@ module.exports.widthdrawPage_post = async(req, res) =>{
 
 
 module.exports.widthdrawHistory = async(req, res) =>{
-  res.render("widthdrawHistory")
+ const id = req.params.id
+const user = await User.findById(id).populate("widthdraws")
+  res.render("widthdrawHistory",{user})
 }
 
 module.exports.logout_get = (req, res) => {
