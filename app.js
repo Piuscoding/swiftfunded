@@ -8,7 +8,7 @@ const session = require('express-session');
 const { requireAuth, checkUser } = require('./server/authMiddleware/authMiddleware');
 
 const app = express();
-const PORT = 7000 || process.env.PORT;
+const PORT = 5500 || process.env.PORT;
 
 //middlewares
 app.use(express.static('public'));
